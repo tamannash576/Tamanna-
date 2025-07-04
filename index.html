@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    font-family: sans-serif;
+    background: color #e6f0dc;
+
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    background-color:#C1E899;
+    padding: 30px;
+    border-radius: 8px;
+    width: 600px;
+    border:3px solid BLACK;
+    margin-left:450px;
+    margin-top: 100px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+     border:2px solid BLACK;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+     border:2px solid black;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #eee;
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+     border:2px solid black;
+}
+
+li button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+H1{
+    color:darkblue;
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- todo list -->
+     <div class="container">
+    <h1 id="A1"> Create your Todo list</h1>
+    <input type="text" name="" id="">
+    <button>add</button><br><br>
+    <button onclick="makegreen()">Make list item green</button>
+    <ul>
+        <!-- <li>apple</li> -->
+    </ul>
+    </div>
+<script>
+    const input = document.querySelector('input')
+    const btn = document.querySelector('button')
+    const list = document.querySelector('ul')
+
+    btn.addEventListener('click', () => {
+        console.log(input.value.trim())
+        if(input.value.trim() === ""){
+            return
+        }
+
+        const task = document.createElement('li')
+        task.innerHTML = ` ${input.value}  <button>Remove</button>` 
+
+        list.prepend(task)
+        input.value = ''
+
+    })
+
+    list.addEventListener('click',(e)=>{
+        if(e.target.tagName==='BUTTON'){
+            e.target.parentNode.remove()
+        }
+    })
+    function makegreen() {
+      const listItems = document.querySelectorAll("li");
+      listItems.forEach(li => {
+        li.style.color = "green";
+      });
+    }
+
+    //make a button that make the color of the li into green
+    //types of events click ,dblclick,keydown 
+    //resume builder.. input lena h (name ,skills,education,project(use text area),experience,bio)
+    
+</script>
+</body>
+</html>
