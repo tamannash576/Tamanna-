@@ -1,0 +1,46 @@
+body{
+    background-color: rgb(249, 245, 248);
+}
+.container h1{
+    text-align: center;
+    text-decoration: underline;
+}
+h2{
+    text-decoration: underline;
+}
+form textarea{
+    display: block;
+  width: 90%;
+   margin: 10px 0;
+  padding: 10px;
+  height:40px;
+  border:2px solid black;
+}
+.container{
+    background-color: white;
+    height:650px;
+    width:80%;
+    margin-left: 80px;
+    border:2px solid black;
+    
+}
+button{
+    background-color: #007BFF;
+  color: white;
+  border: 2px solid black;
+  padding: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+.resume {
+  margin-top: 30px;
+  padding: 20px;
+  border: 5px solid black;
+  border-radius: 5px;
+}
+#resumeForm{
+    margin-left: 20px;
+}
