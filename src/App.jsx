@@ -1,68 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function App() {
-   /*const student=[{ name:'Tamanna sharma', age:22},
-    {name:'anuj sharma', age:27},
-    {name:'avisha sharma', age:27},
-    {name:'viaan sharma', age:27},
+  const [name, setname] = useState('Dear')
+  const user = {
+    name: "Tamanna Sharma",
+    Bio: "Front end developer since 45 days"
+  }
+  let age = 22;
+  function sayhello() {
+    console.log("hello")
+  }
+  return (
+    <>
+      <Hero userDetails={user} data2={age} fun={sayhello}
+        name={name} setname={setname} />
+    </>
+  )
+}
 
-]
+export default App
 
-// map ex
 
-const name=student.map(student=>student.name);
-console.log(name)
-return (
+function Hero({ userDetails, data2, fun, name, setname }) {
+
+  return (
     <div>
-      <h1>Student Names:</h1>
-      <ul>
-        {name.map((name, index) => (
-          <li key={index}>{name}</li>
-        ))}
-      </ul>
+      <h1>hello {name}</h1>
+      <Card data={userDetails} setname={setname} />
+      <h3>my age,{data2}</h3>
+      <button onClick={() => fun()}>say hello</button>
     </div>
-  );*/
-
-
-  //filter ex
-
-
-  /*const Usersage = student.filter(s => s.age);
-  console.log(Usersage)*/
-  // find
-  /*const user = student.find(user => user.age===22);
-  console.log(user)*/
-
-
-  // some
-
-
-  /*const scores = [10, 20, 30];
-const High = scores.some(score => score > 25);
-console.log(High)*/
-
-//includes
-
-  
-/*const fruits= ["apple", "banana","mango","cherry"];
-const Selected = fruits.includes("banana");*/
-//console.log(Selected)
-
-
-//indexof
-
-
-/*const current = "banana";
-const index = fruits.indexOf(current);
-console.log(index)*/
-
-//slice
-
-
-/*const firstThree = fruits.slice(0, 3);
-console.log(firstThree)*/
-
+  )
 }
 
 
-export default App
+
+function Card({ data, setname }) {
+  function changename() {
+    setname("Tamanna Sharma");
+  }
+  return (
+    <>
+      <h2>Name:{data.name}</h2>
+      <h2>Bio:{data.Bio}</h2>
+      <button onClick={changename}>click me </button>
+    </>
+  )
+}
+
+
+
+
+
