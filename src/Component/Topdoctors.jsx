@@ -25,11 +25,12 @@ function TopDoctor() {
 
                         }}
                     >
-
-
-                        <div className="doctor-image">
-                            <div className="doctor-avatar">❤️</div>
-                        </div><div className="top-card-body">
+                        <img
+                            src={doc.image}
+                            alt={doc.name}
+                            className="doctor-image"
+                        />
+                        <div className="top-card-body">
                             <div className={`top-availability ${doc.fees <= 100 ? 'available' : 'not-available'}`}>
                                 <span className="dot" />
                                 <span>{doc.fees <= 100 ? 'Available' : 'Not Available'}</span>

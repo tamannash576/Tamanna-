@@ -833,7 +833,7 @@ textarea {
 
 /* Story */
 .story-section {
-  background: linear-gradient(to right, #2563eb, #3b82f6);
+  background: linear-gradient(to right, #4facfe, #00f2fe);
   color: white;
   padding: 60px 20px;
   text-align: center;
@@ -1660,25 +1660,26 @@ input[type="date"] {
 }
 
 /* register page */
-.register-container {
+.register-container1 {
   min-height: 100vh;
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  /* background: linear-gradient(135deg, #2563eb, #3b82f6); */
+  background-color: rgb(218, 231, 236);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
 }
 
-.register-box {
+.register-box1 {
   background: white;
   border-radius: 10px;
   padding: 2rem;
   width: 100%;
-  max-width: 500px;
+  max-width: 700px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.register-header {
+.register-header1 {
   text-align: center;
   margin-bottom: 1.5rem;
 }
@@ -1799,4 +1800,19 @@ input[type="date"] {
   color: #4371a9;
   text-decoration: none;
   font-size: 0.9rem;
+}
+
+.changes {
+  width: 280px;
+  height: 200px;
+  object-fit: cover;
+  /* Ensures image fills the box without distortion */
+  margin-bottom: 10px;
+  display: block;
+}
+
+.doctor-image1 {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }

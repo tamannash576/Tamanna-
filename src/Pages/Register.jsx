@@ -17,9 +17,9 @@ const Register = () => {
     };
 
     return (
-        <div className="register-container">
-            <div className="register-box">
-                <div className="register-header">
+        <div className="register-container1">
+            <div className="register-box1">
+                <div className="register-header1">
 
                     <h1>Join Prescripto</h1>
                     <p>Create your account and start your healthcare journey</p>

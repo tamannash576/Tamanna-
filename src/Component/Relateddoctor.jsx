@@ -17,9 +17,10 @@ function RelatedDoctors({ speciality }) {
             <div className="related-card-container">
                 {relatedDoctors.map((doc) => (
                     <div key={doc._id} className="related-card">
-                        <div className="doctor-image">
-                            <div className="doctor-avatar">❤️</div>
-                        </div>
+                        <img className="changes"
+                            src={doc.image}
+                            alt={doc.name}
+                        />
                         <div className="related-card-content">
                             <div className={`availability ${doc.fees <= 100 ? 'available' : 'not-available'}`}>
                                 <span className="dot"></span>
