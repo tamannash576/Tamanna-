@@ -1,54 +1,47 @@
-import React, { useState } from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+//import Header from './Component/Header';
+import Navbar from './Component/Navbar';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Contact from './Pages/Contact';
+import Appointment from './Pages/Appointment';
+import Login from './Pages/Login';
+import MyProfile from './Pages/Myprofile';
+import Footer from './Component/Footer';
+import DoctorProfile from './Pages/Doctorprofile';
+import RelatedDoctor from './Component/Relateddoctor';
+import Register from './Pages/Register';
+
+
 
 function App() {
-  const [name, setname] = useState('Dear')
-  const user = {
-    name: "Tamanna Sharma",
-    Bio: "Front end developer since 45 days"
-  }
-  let age = 22;
-  function sayhello() {
-    console.log("hello")
-  }
   return (
-    <>
-      <Hero userDetails={user} data2={age} fun={sayhello}
-        name={name} setname={setname} />
-    </>
-  )
+    <Router>
+
+      <Navbar />
+
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/appointment" element={<Appointment />} />
+          <Route path="/appointment/:id" element={<Appointment />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/myprofile" element={<MyProfile />} />
+          <Route path="/Doctorprofile" element={<DoctorProfile />} />
+          <Route path="/Doctorprofile/:id" element={<DoctorProfile />} />
+          <Route path="/Relateddoctor/:id" element={<RelatedDoctor />} />
+          <Route path="/Relateddoctor" element={<RelatedDoctor />} />
+          <Route path="/Register" element={<Register />} />
+        </Routes>
+      </div>
+
+      <Footer />
+    </Router>
+  );
 }
 
-export default App
-
-
-function Hero({ userDetails, data2, fun, name, setname }) {
-
-  return (
-    <div>
-      <h1>hello {name}</h1>
-      <Card data={userDetails} setname={setname} />
-      <h3>my age,{data2}</h3>
-      <button onClick={() => fun()}>say hello</button>
-    </div>
-  )
-}
-
-
-
-function Card({ data, setname }) {
-  function changename() {
-    setname("Tamanna Sharma");
-  }
-  return (
-    <>
-      <h2>Name:{data.name}</h2>
-      <h2>Bio:{data.Bio}</h2>
-      <button onClick={changename}>click me </button>
-    </>
-  )
-}
-
-
-
-
-
+export default App;
